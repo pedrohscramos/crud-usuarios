@@ -1,0 +1,19 @@
+<h1>Lista de Usuários</h1>
+<a routerLink="/create">Criar Novo Usuário</a>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Ações</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td>
+      <a routerLink="/detail/{{ user.id }}">Detalhes</a> |
+      <a routerLink="/edit/{{ user.id }}">Editar</a> |
+      <button (click)="deleteUser(user.id)">Excluir</button>
+    </td>
+  </tr>
+</table>
